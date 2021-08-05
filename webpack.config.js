@@ -1,5 +1,6 @@
 // Usar o path em vez do caminho "src/index.jsx" para melhor compatibilidade com sistemas operacionais
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
@@ -12,6 +13,11 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, "public", "index.html")
+    })
+  ],
   module: { // Como a aplicação vai se comportar dependendo do tipo de arquivo importado
     rules: [
       {
