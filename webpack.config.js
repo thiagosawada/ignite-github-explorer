@@ -2,6 +2,7 @@
 const path = require("path");
 
 module.exports = {
+  mode: "development",
   // __dirname é a pasta onde esse arquivo está
   entry: path.resolve(__dirname, "src", "index.jsx"), // Arquivo principal da aplicação
   output: {
