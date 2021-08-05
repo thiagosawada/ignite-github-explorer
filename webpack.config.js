@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
+  devtool: "eval-source-map",
   // __dirname é a pasta onde esse arquivo está
   entry: path.resolve(__dirname, "src", "index.jsx"), // Arquivo principal da aplicação
   output: {
