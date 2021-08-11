@@ -9,13 +9,13 @@ module.exports = {
   mode: isDevelopment ? "development" : "production",
   devtool: isDevelopment ? "eval-source-map" : "source-map",
   // __dirname é a pasta onde esse arquivo está
-  entry: path.resolve(__dirname, "src", "index.jsx"), // Arquivo principal da aplicação
+  entry: path.resolve(__dirname, "src", "index.tsx"), // Arquivo principal da aplicação
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx"],
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
   },
   devServer: {
     // Onde tá o conteúdo estático da aplicação
@@ -32,7 +32,7 @@ module.exports = {
     rules: [
       {
         // Recebe uma expressão regular para saber se é um arquivo js
-        test: /\.jsx$/,
+        test: /\.(j|t)sx$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
